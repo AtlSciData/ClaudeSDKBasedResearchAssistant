@@ -1,0 +1,6 @@
+body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+input { display: block; width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+button { padding: 8px 16px; }
+#messages { border: 1px solid #ccc; padding: 12px; min-height: 300px; margin-bottom: 12px; white-space: pre-wrap; }
+
+.tool-info { font-size: 0.85em; color: #666; font-style: italic; margin: 4px 0; }

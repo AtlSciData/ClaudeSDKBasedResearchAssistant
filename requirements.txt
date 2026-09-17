@@ -1,0 +1,5 @@
+claude-agent-sdk
+mcp<2
+pypdf
+rank-bm25
+python-dotenv
