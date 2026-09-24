@@ -18,6 +18,18 @@ class ChatRequest(BaseModel):
     message: str
 
 
+@app.get("/healthz")
+def healthz():
+    """Liveness probe for App Runner/ECS and the Docker HEALTHCHECK.
+
+    Deliberately unauthenticated and dependency-free: it only confirms the
+    process is up and serving requests. It does not (yet) check that the
+    MCP subprocess or the chunk index are healthy -- see the README's
+    "Known limitations" section.
+    """
+    return {"status": "ok"}
+
+
 @app.post("/api/login")
 def api_login(body: LoginRequest):
     token = cognito_login(body.username, body.password)
