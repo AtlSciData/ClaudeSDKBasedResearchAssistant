@@ -1,7 +1,13 @@
 import asyncio
 import os
 from dotenv import load_dotenv
-from claude_agent_sdk import ClaudeSDKClient, ClaudeAgentOptions, AssistantMessage, TextBlock
+from claude_agent_sdk import (
+    ClaudeSDKClient,
+    ClaudeAgentOptions,
+    AssistantMessage,
+    TextBlock,
+    ToolUseBlock,
+)
 
 load_dotenv()
 
@@ -47,9 +53,6 @@ async def get_or_create_client(session_id: str) -> ClaudeSDKClient:
             await client.connect()
             _sessions[session_id] = client
         return _sessions[session_id]
-
-from claude_agent_sdk import ClaudeSDKClient, ClaudeAgentOptions, AssistantMessage, TextBlock, ToolUseBlock
-# (add ToolUseBlock to the existing import line)
 
 async def ask(session_id: str, message: str) -> dict:
     client = await get_or_create_client(session_id)

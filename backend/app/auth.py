@@ -5,23 +5,12 @@ import os
 import time
 import boto3
 import requests
-from jose import jwk, jwt
-from jose.utils import base64url_decode
-from fastapi import HTTPException, Header
-import os
-import time
-import boto3
-import requests
-from dotenv import load_dotenv          # <-- add this
+from dotenv import load_dotenv
 from jose import jwk, jwt
 from jose.utils import base64url_decode
 from fastapi import HTTPException, Header
 
-load_dotenv()                            # <-- and this
-
-AWS_REGION = os.environ["AWS_REGION"]
-COGNITO_POOL_ID = os.environ["COGNITO_POOL_ID"]
-COGNITO_CLIENT_ID = os.environ["COGNITO_CLIENT_ID"]
+load_dotenv()
 
 AWS_REGION = os.environ["AWS_REGION"]
 COGNITO_POOL_ID = os.environ["COGNITO_POOL_ID"]
