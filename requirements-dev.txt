@@ -1,0 +1,4 @@
+# Dev/test-only dependencies, on top of the runtime requirements.
+-r requirements.txt
+
+pytest>=8.0

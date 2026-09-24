@@ -1,0 +1,23 @@
+# Version control / editors
+.git/
+.gitignore
+.idea/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Secrets -- never send this into a build context or image layer
+.env
+
+# Not needed at runtime: raw ingestion inputs, docs, tests, dev-only files
+data/raw/
+Documentation/
+tests/
+requirements-dev.txt
+*.md
+Dockerfile
+.dockerignore

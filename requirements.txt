@@ -3,3 +3,18 @@ mcp<2
 pypdf
 rank-bm25
 python-dotenv
+
+# Backend (FastAPI service + Cognito auth) -- these were already imported by
+# backend/app/main.py and auth.py but were missing here, so a clean
+# `pip install -r requirements.txt` could not actually run the backend.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+boto3>=1.34
+requests>=2.31
+python-jose[cryptography]>=3.3
+
+# NOTE: these are minimum-version constraints, not exact pins. This sandbox
+# could not reach PyPI to resolve and freeze exact versions (see the PR
+# description). Before building the Docker image, run once, locally:
+#   pip install -r requirements.txt && pip freeze > requirements.txt
+# to lock this file to exact, reproducible versions.
