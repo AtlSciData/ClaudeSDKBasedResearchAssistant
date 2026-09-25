@@ -80,13 +80,16 @@ python ingest.py
 
 # 4. Run the backend
 uvicorn backend.app.main:app --reload --port 8080
-# Windows note: use `python backend/run_server.py` instead -- uvicorn's
+# Windows note: use `python -m backend.run_server` instead -- uvicorn's
 # --reload defaults to an event loop that can't spawn subprocesses on
 # Windows, which the agent needs to launch mcp_server.py. See
 # backend/run_server.py for why.
 
 # 5. Open http://127.0.0.1:8080 and log in with a Cognito user
 ```
+
+Note: `.env` must also set `CLAUDE_CODE_USE_BEDROCK=1` (see `.env.example`)
+for the agent to route through Bedrock rather than Anthropic's direct API.
 
 To run the standalone CLI agent instead of the web app:
 
